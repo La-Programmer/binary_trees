@@ -54,6 +54,8 @@ int binary_tree_is_full(const binary_tree_t *tree)
 
 	if (tree == NULL)
 		return (0);
+	if (binary_tree_is_leaf(tree))
+		return (1);
 	if (binary_complete(tree->left) && !binary_tree_is_leaf(tree->left))
 		l_result = binary_tree_is_full(tree->left);
 	if (binary_complete(tree->right) && !binary_tree_is_leaf(tree->right))
